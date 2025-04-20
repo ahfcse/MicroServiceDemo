@@ -116,15 +116,17 @@ namespace Catalog.API.Controllers
         {
             try
             {
-               
-                var IsUpdate = _ProductManager.Update(product.Id,product);
+
+                var IsUpdate = _ProductManager.Update(product.Id, product);
                 if (IsUpdate)
                 {
                     return CustomResult("Product Has been Updated Successfully", product);
                 }
                 else
                 {
-                    return CustomResult("Product Updated Failed", (int)HttpStatusCode.BadReW
+                    return CustomResult("Product Updated Failed", (int)HttpStatusCode.BadRequest);
+                }
+            }
             catch (Exception ex)
             {
                 return CustomResult((int)HttpStatusCode.BadRequest);
