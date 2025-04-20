@@ -124,9 +124,7 @@ namespace Catalog.API.Controllers
                 }
                 else
                 {
-                    return CustomResult("Product Updated Failed", (int)HttpStatusCode.BadRequest);
-                }
-            }
+                    return CustomResult("Product Updated Failed", (int)HttpStatusCode.BadReW
             catch (Exception ex)
             {
                 return CustomResult((int)HttpStatusCode.BadRequest);
