@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using Basket.API.Models;
 using Microsoft.Extensions.Caching.Distributed;
+using Newtonsoft.Json;
 
 namespace Basket.API.Repositories
 {
@@ -19,11 +20,11 @@ namespace Basket.API.Repositories
                 {
                     return null;
                 }
-              return JsonSerializer.Deserialize<ShoppingCart>(basket);
+              return JsonConvert.DeserializeObject<ShoppingCart>(basket);
         }
         public async Task<ShoppingCart> UpdateBasket(ShoppingCart basket)
         {
-            await _redisCache.SetStringAsync(basket.UserName, JsonSerializer.Serialize(basket));
+            await _redisCache.SetStringAsync(basket.UserName, JsonConvert.SerializeObject(basket));
             return await GetBasket(basket.UserName);
         }
         public async Task DeleteBasket(string userName)
