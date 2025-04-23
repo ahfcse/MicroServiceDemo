@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Discount.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class DiscountController : BaseController
     {

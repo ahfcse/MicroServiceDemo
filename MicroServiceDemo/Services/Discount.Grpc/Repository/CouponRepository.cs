@@ -1,10 +1,9 @@
 ﻿using Dapper;
-using Discount.API.Models;
-using Microsoft.AspNetCore.Localization;
+using Discount.Grpc.Models;
 using Npgsql;
 
 
-namespace Discount.API.Repository
+namespace Discount.Grpc.Repository
 {
     public class CouponRepository: ICouponRepository
     {
