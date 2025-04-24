@@ -33,7 +33,7 @@ namespace Discount.Grpc.Repository
             }
             return true;
         }
-        public async Task<Coupon> GetCoupon(string productId)
+        public async Task<Coupon> GetDiscount(string productId)
         {
 
             var connection = new NpgsqlConnection(_configuration.GetConnectionString("DiscountDB"));

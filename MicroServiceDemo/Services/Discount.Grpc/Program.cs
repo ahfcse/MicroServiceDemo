@@ -2,6 +2,7 @@ using Discount.Grpc.Repository;
 
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddAutoMapper(typeof(Program));
 //builder.Services.AddScoped<ICouponRepository, CouponRepository>();
 
 // Add services to the container.
