@@ -9,9 +9,16 @@
   <ItemGroup>
 	  <PackageReference Include="CoreApiResponse" Version="1.0.1" />
 	  <PackageReference Include="dapper" Version="2.1.66" />
+	  <PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
     <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="9.0.2" />
     <PackageReference Include="npgsql" Version="9.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\Discount.Grpc\Protos\discount.proto" GrpcServices="Server">
+      <Link>Protos\discount.proto</Link>
+    </Protobuf>
   </ItemGroup>
 
 </Project>

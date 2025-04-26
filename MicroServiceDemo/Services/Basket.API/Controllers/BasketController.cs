@@ -43,6 +43,8 @@ namespace Basket.API.Controllers
         {
             try
             {
+                //UPDATE Discount FROM GRPC
+                //Calculate Amount
                 var updatedBasket =await _basketRepository.UpdateBasket(basket);
                 if (updatedBasket == null)
                 {

@@ -19,7 +19,7 @@ message CouponRequest{
 	int32 amount = 5;
 }
 message DeleteDiscountRequest{
-	string id = 1;
+	string product_id = 1;
 }
 message DeleteDiscountResponse{
 	bool success = 1;
