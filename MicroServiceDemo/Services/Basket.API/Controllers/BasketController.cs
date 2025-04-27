@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using Basket.API.GrpcServices;
 using Basket.API.Models;
 using Basket.API.Repositories;
 using CoreApiResponse;
@@ -12,9 +13,11 @@ namespace Basket.API.Controllers
     public class BasketController : BaseController
     {
         private readonly IBasketRepository _basketRepository;
-        public BasketController(IBasketRepository basketRepository)
+        private readonly DiscountGrpcService _discountGrpcService;
+        public BasketController(IBasketRepository basketRepository, DiscountGrpcService discountGrpcService)
         {
             _basketRepository = basketRepository;
+            _discountGrpcService = discountGrpcService;
         }
         [HttpGet]
         [ProducesResponseType(typeof(ShoppingCart), (int)HttpStatusCode.OK)]
@@ -45,6 +48,13 @@ namespace Basket.API.Controllers
             {
                 //UPDATE Discount FROM GRPC
                 //Calculate Amount
+
+                foreach (var item in basket.Items)
+                {
+                    var coupon = await _discountGrpcService.GetDiscount(item.ProductId);
+                    item.Price -= coupon.Amount;
+                }
+
                 var updatedBasket =await _basketRepository.UpdateBasket(basket);
                 if (updatedBasket == null)
                 {
