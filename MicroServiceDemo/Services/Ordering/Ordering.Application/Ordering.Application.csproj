@@ -12,9 +12,16 @@
 
   <ItemGroup>
     <Folder Include="Behaviours\" />
-    <Folder Include="Contacts\Infrastructure\" />
-    <Folder Include="Contacts\Persistence\" />
-    <Folder Include="Features\" />
+    <Folder Include="Features\Commands\CreateOrder\" />
+    <Folder Include="Features\Commands\DeleteOrder\" />
+    <Folder Include="Features\Commands\UpdateOrder\" />
+    <Folder Include="Features\Queries\GetOrderByUserName\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="EF.Core.Repository" Version="1.0.0.2" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
   </ItemGroup>
 
 </Project>
