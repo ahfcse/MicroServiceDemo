@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ordering.Domain.Models
+namespace Ordering.Application.Features.Orders.Queries.GetOrderByUserName
 {
     public class OrderVM
     {

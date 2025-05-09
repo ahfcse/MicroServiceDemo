@@ -10,6 +10,6 @@ namespace Ordering.Application.Contacts.Persistence
 {
     public interface IOrderRepository:ICommonRepository<Order>
     {
-        Task<IEnumerable<Order>> GetOrderByUser();
+        Task<IEnumerable<Order>> GetOrderByUser(string user);
     }
 }

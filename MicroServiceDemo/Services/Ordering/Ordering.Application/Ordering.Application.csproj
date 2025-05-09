@@ -12,10 +12,9 @@
 
   <ItemGroup>
     <Folder Include="Behaviours\" />
-    <Folder Include="Features\Commands\CreateOrder\" />
-    <Folder Include="Features\Commands\DeleteOrder\" />
-    <Folder Include="Features\Commands\UpdateOrder\" />
-    <Folder Include="Features\Queries\GetOrderByUserName\" />
+    <Folder Include="Features\Orders\Commands\CreateOrder\" />
+    <Folder Include="Features\Orders\Commands\DeleteOrder\" />
+    <Folder Include="Features\Orders\Commands\UpdateOrder\" />
   </ItemGroup>
 
   <ItemGroup>
