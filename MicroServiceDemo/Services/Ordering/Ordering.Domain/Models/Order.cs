@@ -9,7 +9,7 @@ namespace Ordering.Domain.Models
 {
     public class Order:EntityBase
     {
-        public int ProductId { get; set; }
+        public int Id { get; set; }
         public string UserName { get; set; }
         public decimal Total { get; set; }
 

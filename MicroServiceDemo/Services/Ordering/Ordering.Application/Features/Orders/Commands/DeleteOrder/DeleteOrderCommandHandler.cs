@@ -20,7 +20,7 @@ namespace Ordering.Application.Features.Orders.Commands.DeleteOrder
         }
         public Task<bool> Handle(DeleteOrderCommand request, CancellationToken cancellationToken)
         {
-            return _orderRepository.DeleteAsync(new Domain.Models.Order() { ProductId=request.ProductId });
+            return _orderRepository.DeleteAsync(new Domain.Models.Order() { Id=request.OrderId });
         }
     }
     
