@@ -14,6 +14,11 @@ namespace Ordering.Infrastructure.Persistence
         {
 
         }
+        override protected async void OnModelCreating(ModelBuilder modelBuilder)
+        {
+           await OrderContextSeed.Seed(modelBuilder);
+            base.OnModelCreating(modelBuilder);
+        }
         public DbSet<Order> Orders { get; set; }
 
 
